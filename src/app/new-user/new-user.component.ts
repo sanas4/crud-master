@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {MatDialog} from '@angular/material';
-import { AvatarDialogComponent } from "../avatar-dialog/avatar-dialog.component";
+import {AvatarDialogComponent} from '../avatar-dialog/avatar-dialog.component';
 import {Router} from '@angular/router';
 import {FirebaseService} from '../services/firebase.service';
 
@@ -47,18 +47,18 @@ export class NewUserComponent implements OnInit {
     });
   }
 
-    openDialog() {
-      const dialogRef = this.dialog.open(AvatarDialogComponent, {
-        height: '400px',
-        width: '400px',
-      });
+  openDialog() {
+    const dialogRef = this.dialog.open(AvatarDialogComponent, {
+      height: '400px',
+      width: '400px',
+    });
 
-      dialogRef.afterClosed().subscribe(result => {
-        if(result){
-          this.avatarLink = result.link;
-        }
-      });
-    }
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.avatarLink = result.link;
+      }
+    });
+  }
 
   resetFields() {
     this.avatarLink = 'https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg';
